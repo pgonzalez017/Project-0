@@ -37,6 +37,7 @@ public class EmployeeMenu extends Menu{
                     break;
                 }
                 else if(userInput.equals("remove")){
+                    System.out.println(empjdbc.viewLot());
                     System.out.println("Please enter the id for the car you want to remove from the lot");
                     userInput = scan.nextLine();
                     empjdbc.removeCar(Integer.parseInt(userInput));

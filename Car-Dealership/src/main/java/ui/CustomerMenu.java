@@ -34,9 +34,9 @@ public class CustomerMenu extends Menu{
                     Car c;
                     for(int i = 0; i < cars.size(); i++){
                         c = (Car) cars.get(i);
-                        System.out.println("Make: " + c.getMake() + " Model: "  + c.getModel() +
-                                            " Year: " + c.getYear() + " Remaining Payment: " + c.getRemainingPayment() +
-                                                " Monthly Payment over 5 years: " + c.getMonthly());
+                        System.out.println("Make: " + c.getMake() + ", Model: "  + c.getModel() +
+                                            ", Year: " + c.getYear() + ", Remaining Payment: " + c.getRemainingPayment() +
+                                                ", Monthly Payment over 5 years: " + c.getMonthly());
                     }
                     System.out.println();
                     /*
@@ -55,7 +55,7 @@ public class CustomerMenu extends Menu{
                     Car c;
                     for(int i = 0; i < cars.size(); i++){
                         c = (Car) cars.get(i);
-                        System.out.println("Make: " + c.getMake() + " Model: "  + c.getModel() + " Year: " + c.getYear());
+                        System.out.println("Make: " + c.getMake() + ", Model: "  + c.getModel() + ", Year: " + c.getYear());
                     }
                     System.out.println();
                     break;
