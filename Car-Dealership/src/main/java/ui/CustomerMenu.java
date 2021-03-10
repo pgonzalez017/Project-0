@@ -35,7 +35,8 @@ public class CustomerMenu extends Menu{
                     for(int i = 0; i < cars.size(); i++){
                         c = (Car) cars.get(i);
                         System.out.println("Make: " + c.getMake() + " Model: "  + c.getModel() +
-                                            " Year: " + c.getYear() + " Remaining Payment: " + c.getRemainingPayment());
+                                            " Year: " + c.getYear() + " Remaining Payment: " + c.getRemainingPayment() +
+                                                " Monthly Payment over 5 years: " + c.getMonthly());
                     }
                     System.out.println();
                     /*
@@ -60,6 +61,7 @@ public class CustomerMenu extends Menu{
                     break;
                 } else if (userInput.equals("offer")) {
                     //
+                    System.out.println(custjdbc.getAllCars());
                     offerMenu.showMenu();
                     break;
                 } else {

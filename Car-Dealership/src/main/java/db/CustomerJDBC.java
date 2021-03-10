@@ -37,25 +37,6 @@ public class CustomerJDBC implements GenericDao<Customer, String>{
 
     }
 
-    public ArrayList<Car> getPayments(Integer id){
-        try{
-            ArrayList<Car> payments = new ArrayList<>();
-            String sql = "select * from CarPayments where cust_id = ?;";
-            PreparedStatement ps = ConnectionUtil.getInstance().getConnection().prepareStatement(sql);
-            ps.setInt(1, id);
-            ResultSet rs = ps.executeQuery();
-
-            System.out.println("YO");
-            while(rs.next()){
-                payments.add(new Car(rs.getInt("vin"), rs.getInt("payment"), rs.getString("make"), rs.getString("model"), rs.getString("yr")));
-            }
-            return payments;
-        }
-        catch(SQLException e){
-            e.printStackTrace();
-            return null;
-        }
-    }
 
     public void makeOffer(Integer custId, Integer vin, Integer offer){
         try{
@@ -84,7 +65,7 @@ public class CustomerJDBC implements GenericDao<Customer, String>{
             ResultSet rs = ps.executeQuery();
 
             while(rs.next()){
-                temp = new Car(rs.getInt("vin"), rs.getInt("payment"), rs.getString("make"), rs.getString("model"), rs.getString("yr"));
+                temp = new Car(rs.getInt("vin"), rs.getInt("payment"), rs.getInt("monthly_payments"), rs.getString("make"), rs.getString("model"), rs.getString("yr"));
                 cars.add(temp);
             }
             return cars;

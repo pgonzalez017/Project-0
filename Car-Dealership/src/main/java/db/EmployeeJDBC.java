@@ -26,7 +26,16 @@ public class EmployeeJDBC implements GenericDao<Employee, String>{
             ps.setInt(1, vin);
             ps.setInt(2, custId);
             ps.executeQuery();
+
+            sql = "select monthlyPayments(?, ?)";
+            ps = ConnectionUtil.getInstance().getConnection().prepareStatement(sql);
+            ps.setInt(1, vin);
+            ps.setInt(2, custId);
+            ps.executeQuery();
+
             System.out.println("Offer Accepted!");
+
+
         }
         catch(SQLException e){
             e.printStackTrace();
@@ -111,7 +120,7 @@ public class EmployeeJDBC implements GenericDao<Employee, String>{
                 cust.setFirstName(rs.getString("FirstName"));
                 cust.setLastName(rs.getString("LastName"));
                 cust.setEmail(rs.getString("Email"));
-                c = new Car(rs.getInt("vin"), rs.getInt("payment"), rs.getString("make"), rs.getString("model"), rs.getString("yr"));
+                c = new Car(rs.getInt("vin"), rs.getInt("payment"), rs.getInt("monthly_payments"), rs.getString("make"), rs.getString("model"), rs.getString("yr"));
                 cust.addCar(c);
                 System.out.println(cust.getCars());
                 payments.add(cust);

@@ -7,6 +7,7 @@ public class Car {
     private String year;
     private Integer price;
     private Integer remainingPayment;
+    private Integer monthly;
 
     public Car(Integer id, String make, String model, String year, Integer price){
         this.id = id;
@@ -15,14 +16,16 @@ public class Car {
         this.model = model;
         this.price = price;
         remainingPayment = 0;
+        monthly = 0;
     }
 
-    public Car(Integer id, Integer remainingPayment, String make, String model, String year){
+    public Car(Integer id, Integer remainingPayment, Integer monthly, String make, String model, String year){
         this.id = id;
         this.make = make;
         this.model = model;
         this.year = year;
         this.remainingPayment = remainingPayment;
+        this.monthly = monthly;
         price = 0;
     }
 
@@ -68,5 +71,13 @@ public class Car {
         StringBuilder sb = new StringBuilder();
         sb.append("[ ID:" + id + ", Make:" + make + ", Model:" + model + ", Year:" + year + ", Price:" + price + ", " +  "Remaining Payment:" + remainingPayment + "]");
         return sb.toString();
+    }
+
+    public Integer getMonthly() {
+        return monthly;
+    }
+
+    public void setMonthly(Integer monthly) {
+        this.monthly = monthly;
     }
 }
