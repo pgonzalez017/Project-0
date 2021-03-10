@@ -32,8 +32,10 @@ public class OfferMenu extends Menu{
         boolean validOffer = true;
 
         if(emp){
-            System.out.println("Enter the vin for the car you would like to accept or reject offers for:");
+            System.out.println("Enter the vin for the car you would like to accept or reject offers for\n or Enter \"return\" to return to the previous menu");
             vin = scan.nextLine();
+            if(vin.equals("return"))
+                return;
             System.out.println("Enter the customer id the for the offer you would like to accept or reject:");
             id = scan.nextLine();
             System.out.println("Enter \"accept\" if you would like to accept the offer or enter \"reject\" to reject the offer");
@@ -49,8 +51,10 @@ public class OfferMenu extends Menu{
             }
         }
         else{
-            System.out.println("Please enter the id for the car you would like to make the offer for");
+            System.out.println("Please enter the id for the car you would like to make the offer for\n or Enter \"return\" to return to the previous menu");
             id = scan.nextLine();
+            if(id.equals("return"))
+                return;
             System.out.println("Enter the offer you would like to make for the car");
             userInput = scan.nextLine();
             for (int i = 0; i < userInput.length() && validOffer; i++) {

@@ -12,6 +12,7 @@ public class InitialMenu extends Menu{
             System.out.println("Enter \"customer\" to login as a customer:");
             System.out.println("Enter \"employee\" to login as an employee:");
             System.out.println("Enter \"register\" to register for a customer account:");
+            System.out.println("Enter \"exit\" to exit the application");
 
             do {
                 userInput = scan.nextLine();

@@ -16,6 +16,7 @@ public class EmployeeMenu extends Menu{
 
         while(true){
             System.out.println("Please enter one of the following options:");
+            System.out.println("\tEnter \"return\" to return to the previous menu");
             System.out.println("\tEnter \"add\" to add a car to the lot:");
             System.out.println("\tEnter \"remove\" to remove a car from the lot:");
             System.out.println("\tEnter \"payments\" to view all payments remaining:");
@@ -61,8 +62,8 @@ public class EmployeeMenu extends Menu{
                         System.out.println("Name: " + cust.getFirstName() + " " + cust.getLastName() + " Email: " + cust.getEmail());
                         for(int j = 0; j < cars.size(); j++){
                             c = (Car) cars.get(j);
-                            System.out.println("Payment Remaining: " + c.getRemainingPayment() + " Make: " + c.getMake() +
-                                                " Model: " +  c.getModel() + " Year: " + c.getYear());
+                            System.out.println("Payment Remaining: " + c.getRemainingPayment() + ", Make: " + c.getMake() +
+                                                ", Model: " +  c.getModel() + ", Year: " + c.getYear());
                         }
                     }
                     break;

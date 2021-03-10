@@ -13,6 +13,7 @@ public class CustomerMenu extends Menu{
     public void showMenu(){
         while(true) {
             System.out.println("Please enter one of the following options:");
+            System.out.println("\tEnter \"return\" to return to log out and return to the previous menu");
             System.out.println("\tEnter \"view\" to view the cars on the lot:");
             System.out.println("\tEnter \"payments\" to view remaining payments:");
             System.out.println("\tEnter \"cars\" to view the cars that you own:");

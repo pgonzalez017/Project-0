@@ -83,6 +83,7 @@ public class Customer {
     public Customer(){
         offers = new ArrayList<Integer>();
         cars = new ArrayList<Car>();
+        this.id = -1;
     }
     public Customer(Integer id, String firstName, String lastName, String phoneNumber, String email, String password){
         this.id = id;

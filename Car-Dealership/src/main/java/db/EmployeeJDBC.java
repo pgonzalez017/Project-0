@@ -117,13 +117,16 @@ public class EmployeeJDBC implements GenericDao<Employee, String>{
             Customer cust = new Customer();
             Car c;
             while(rs.next()){
-                cust.setFirstName(rs.getString("FirstName"));
-                cust.setLastName(rs.getString("LastName"));
-                cust.setEmail(rs.getString("Email"));
+                if(!(rs.getInt("cust_id") == cust.getId())){
+                    payments.add(cust);
+                    cust.setFirstName(rs.getString("FirstName"));
+                    cust.setLastName(rs.getString("LastName"));
+                    cust.setEmail(rs.getString("Email"));
+                    cust.setId(rs.getInt("cust_id"));
+                }
+                System.out.println();
                 c = new Car(rs.getInt("vin"), rs.getInt("payment"), rs.getInt("monthly_payments"), rs.getString("make"), rs.getString("model"), rs.getString("yr"));
                 cust.addCar(c);
-                System.out.println(cust.getCars());
-                payments.add(cust);
             }
             return payments;
         }

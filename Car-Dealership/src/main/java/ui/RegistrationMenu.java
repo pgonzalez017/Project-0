@@ -23,7 +23,7 @@ public class RegistrationMenu extends Menu{
         // TODO: Enter all the user input into the database
         while(true) {
             do {
-                System.out.println("Please enter your first name:");
+                System.out.println("Please enter your first name\n or enter \"return\" to return to the previous menu:");
                 userInput = scan.nextLine();
                 if (userInput.equals("return")) {
                     return;

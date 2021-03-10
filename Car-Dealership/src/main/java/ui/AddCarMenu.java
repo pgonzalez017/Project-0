@@ -14,7 +14,7 @@ public class AddCarMenu extends Menu{
     public void showMenu(){
 
         do{
-            System.out.println("Please enter the make of the car");
+            System.out.println("Please enter the make of the car\n or enter \"return\" to return to the previous menu");
             userInput = scan.nextLine();
             if(userInput.equals("return")){
                 return;

@@ -22,7 +22,7 @@ public class LoginMenu extends Menu{
         String email, password;
 
         do{
-            System.out.println("Please enter your e-mail:");
+            System.out.println("Please enter your e-mail to proceed with the login\nor enter \"return\" to return to the previous menu:");
             email = scan.nextLine();
             if(email.equals("return"))
                 return;
